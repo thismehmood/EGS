@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  booking_details: MyString
+  customer: one
+  venue: one
+  reservation_details: MyString
+
+two:
+  name: MyString
+  booking_details: MyString
+  customer: two
+  venue: two
+  reservation_details: MyString

@@ -1,0 +1,27 @@
+<%= render partial: "layouts/navbar" %>
+
+<div class="container">
+  <h2>Hover Rows</h2>
+  <p>The .table-hover class enables a hover state on table rows:</p>            
+  <table class="table table-hover">
+    <thead>
+      <tr>
+        <th> # </th>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+      </tr>
+    </thead>
+    <tbody>
+    <% @customers.each_with_index do |t  ,i|%> 
+        <tr>
+            <td> <%= i%> </td>
+            <td> <%= t.id%> </td>
+            <td> <%= t.name%> </td>
+            <td>  <%= t.email%></td>
+        </tr>
+        
+    <%end%>   
+    </tbody>
+  </table>
+</div>

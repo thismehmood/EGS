@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  address: MyString
+  venue_type: MyString
+  contact_no: MyString
+  venue_owner: one
+
+two:
+  name: MyString
+  address: MyString
+  venue_type: MyString
+  contact_no: MyString
+  venue_owner: two

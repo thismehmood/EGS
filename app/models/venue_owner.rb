@@ -1,0 +1,3 @@
+class VenueOwner < ApplicationRecord
+
+end
