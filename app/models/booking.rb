@@ -1,4 +1,4 @@
 class Booking < ApplicationRecord
-  belongs_to :customer
-  belongs_to :venue
-end
+    belongs_to :customer
+    belongs_to :venue
+  end
