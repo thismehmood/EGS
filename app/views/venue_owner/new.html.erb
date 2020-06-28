@@ -1,24 +1,34 @@
 <%= render partial: "layouts/navbar" %>
-
 <div class="container">
-  <table class="table table-hover">
-    <thead>
-      <tr>
-        <th> #  </th>
-        <th>ID</th>
-        <th>Name</th>
-        <th>contact_no</th>
-      </tr>
-    </thead>
-    <tbody>
-    <% @venue_owners.each_with_index do |q  ,i|%> 
-        <tr>
-            <td> <%= i%> </td>
-            <td> <%= q.id%> </td>
-            <td> <%= q.name%> </td>
-            <td>  <%= q.contact_no%></td>
-        </tr>
-    <%end%>   
-    </tbody>
-  </table>
+      <div class="row">
+  <div class="col-md-6">
+    <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title">New Venue_Owner</h3>
+      </div>
+      <div class="panel-body">
+        <form action="/saveVO" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="occgXkyY992tlNiu30tfQwukwI9fnz21R78LDQz2JtNuLWtygJMthYLepyOhbMwpXK7N4C9KIj9NJft/LV1Hjg==">
+            <div class="form-group">
+                <label for="client_name">Name</label>
+                <input class="form-control" type="text" name="client[name]">
+            </div>
+
+            <div class="form-group">
+                <label for="client_email">Email</label>
+                <input class="form-control" type="text" name="client[email]">
+            </div>
+            <div class = "form-group">
+                <label for = "client_phone"> phone </label>
+                <input  class = "form-control" type = "text" name = "client[[phone]">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" name="commit" value="Create Client" class="btn btn-lg btn-primary" data-disable-with="Create Client">
+            </div>
+            
+            </form>
+      </div>
+    </div>
+  </div>
+</div>
 </div>

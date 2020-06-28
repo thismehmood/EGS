@@ -10,12 +10,20 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
- *= require_tree .
- *= require_self
  */
-  /* Custom bootstrap variables must be set or imported *before* bootstrap. */
- 
- @import "bootstrap";
+/* Custom bootstrap variables must be set or imported *before* bootstrap. */
+
+@import "bootstrap";
+@import "./material/css/material-dashboard.css";
+@import "./material/css/partials/dashboard/core/bootstrap/scss/bootstrap-grid.css";
+@import "./material/css/partials/dashboard/core/bootstrap/scss/bootstrap-reboot.css";
+@import "./material/css/partials/dashboard/core/bootstrap/scss/bootstrap.css";
 
 
- 
+
+.navbar {
+  background-color: #403d3d !important;
+}
+a {
+  color: white !important;
+}

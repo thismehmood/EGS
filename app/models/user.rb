@@ -3,10 +3,12 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
-         
+          
   # Validation
-  def name
-    return self.first_name + " " + self.last_name
-  end
+  # validates :first_name , presence: :true
+  # validates :last_name , presence: :true
 
+  def name
+    return self.first_name + " " + self.last_name rescue nil
+  end
 end
