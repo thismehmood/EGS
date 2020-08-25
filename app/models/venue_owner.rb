@@ -1,3 +1,0 @@
-class VenueOwner < ApplicationRecord
-
-end
