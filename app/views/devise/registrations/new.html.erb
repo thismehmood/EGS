@@ -28,13 +28,19 @@
             <% if @minimum_password_length %>
               <em>(<%= @minimum_password_length %> characters minimum)</em>
             <% end %><br />
-
             <%= f.password_field :password, autocomplete: "off", class: 'form-control' %>
           </div>
 
           <div class="form-group">
             <%= f.label :password_confirmation %><br />
             <%= f.password_field :password_confirmation, autocomplete: "off", class: 'form-control' %>
+          </div>
+
+          <div class="form-group">
+           <%= f.radio_button :role, 'venue_owner' %> 
+           <%= f.label :role, 'venue_owner', :value => 'venue_owner' %>
+           <%= f.radio_button :role, 'customer' %>
+           <%= f.label :role, 'customer', :value => 'customer' %>
           </div>
 
           <div class="form-group">
