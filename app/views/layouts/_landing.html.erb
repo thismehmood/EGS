@@ -11,17 +11,13 @@
       </div>
       <div class="collapse navbar-collapse justify-content-end" id="navigation">
         <ul class="navbar-nav">
-         
-          
-          
            <%# User signin and signup %>
-
           <li class="nav-item">
-          <%if user_signed_in? %>
+           <%if user_signed_in? %>
            
            <%= link_to "Logout", destroy_user_session_path, method: :delete , class: "nav-link" %>
          
-          <%else%>
+           <%else%>
             <%= link_to "Login", new_user_session_path	 , class: "nav-link" %>
           <%end%>
           </a>

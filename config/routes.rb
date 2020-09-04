@@ -2,11 +2,8 @@ Rails.application.routes.draw do
   get 'pages/home'
 
   devise_for :users, :controllers => { :sessions => "users/sessions" }
-
   
-
   get 'home/index'
-
   get 'welcome/index'
   get 'landing/index'
 
@@ -43,7 +40,9 @@ Rails.application.routes.draw do
   post  "/booking" => "booking#create"
   
   # venue route
-  resources :venues
+
+  resources :venues 
+
   # get "/venue/" => "venue#index"
   # get "/venue/new" =>  "venue#new"
   # post "venue_create" => "venue#create"
