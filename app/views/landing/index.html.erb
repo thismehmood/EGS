@@ -1,85 +1,33 @@
-  <nav class="navbar navbar-expand-lg fixed-top navbar-transparent " color-on-scroll="300">
-    <div class="container">
-      <div class="navbar-translate">
-        <a class="navbar-brand" href="https://demos.creative-tim.com/paper-kit/index.html" rel="tooltip" title="Coded by Creative Tim" data-placement="bottom" target="_blank">
-        </a>
-        <button class="navbar-toggler navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-bar bar1"></span>
-          <span class="navbar-toggler-bar bar2"></span>
-          <span class="navbar-toggler-bar bar3"></span>
-        </button>
-      </div>
-      <div class="collapse navbar-collapse justify-content-end" id="navigation">
-        <ul class="navbar-nav">
-          <li class="nav-item">
-            <a href="../index.html" class="nav-link"><i class="nc-icon nc-layout-11"></i> Prizing</a>
-          </li>
-          <li class="nav-item">   
-            <a href="https://demos.creative-tim.com/paper-kit-2/docs/1.0/getting-started/introduction.html" target="_blank" class="nav-link"><i class="nc-icon nc-book-bookmark"></i> Documentation</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Twitter" data-placement="bottom" href="https://twitter.com/CreativeTim" target="_blank">
-              <i class="fa fa-twitter"></i>
-              <p class="d-lg-none">Twitter</p>
-            </a>
-          </li>
-
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Like us on Facebook" data-placement="bottom" href="https://web.facebook.com/mehmood.ulhassan.75033" target="_blank">
-              <i class="fa fa-facebook-square"></i>
-              <p class="d-lg-none">Facebook</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Follow us on Instagram" data-placement="bottom" href="https://www.instagram.com/this.mehmood/" target="_blank">
-              <i class="fa fa-instagram"></i>
-              <p class="d-lg-none">Instagram</p>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" rel="tooltip" title="Star on GitHub" data-placement="bottom" href="https://github.com/thismehmood" target="_blank">
-              <i class="fa fa-github"></i>
-              <p class="d-lg-none">GitHub</p>
-            </a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </nav>
+<%= render "/layouts/landing"%>
   <div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
     <div class="filter"></div>
-    <div class="container">
-      <div class="motto text-center">
-        <h1>Corporative Effect affairs</h1>
-      </div>
-     <div class="row justify-content-center">
-
-      <div class="card" style="width: 15rem; margin-top: 20px;">
-        <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Request An Event</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="landing/login" class="btn btn-primary btn-sm">Search For Event</a>
+     <div class="container">
+        <div class="motto text-center"> 
+         <h1>Corporative Effect affairs</h1>
+        </div> 
+         <div class="row justify-content-center">
+            <% if user_signed_in? %>  
+              <%if current_user.role == "venue_owner"%>
+               <div class="card" style="width:  15rem; margin-top: 20px;">
+                  <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
+                  <div class="card-body">      
+                    <h4 class="card-title">Request An Event</h4>
+                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                    <a href="booking/index" class="btn btn-primary btn-sm">Search For Event</a>
+                  </div>
+               </div>
+               <div class="card" style="width: 15rem; margin-top: 20px; margin-left: 5px;">
+                  <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
+                 <div class="card-body">
+                   <h4 class="card-title">becomes an venue Partner</h4>
+                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                   <a href="subscription" class="btn btn-primary btn-sm">Request venue</a>
+                 </div>
+                </div>
+              <% end %>
+            <% end %>     
         </div>
-      </div>
-       <div class="card" style="width: 15rem; margin-top: 20px; margin-left: 5px;">
-        <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">becomes an venue Partner</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="venue_owner" class="btn btn-primary btn-sm">Request venue</a>
-        </div>
-      </div>
-       <div class="card" style="width: 15rem; margin-top: 20px;margin-left: 5px;">
-        <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
-        <div class="card-body">
-          <h4 class="card-title">Card title</h4>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary btn-sm">Go somewhere</a>
-        </div>
-      </div>
-     </div>
-      
+      </div> 
     </div>
   </div>
 

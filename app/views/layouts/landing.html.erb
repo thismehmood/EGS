@@ -3,16 +3,9 @@
 
 <head>
   <meta charset="utf-8" />
-
   <link rel="apple-touch-icon" sizes="76x76" href="../assets/img//apple-icon.png">
-  
   <link rel="icon" type="image/png" href="../assets/img//favicon.png">
-
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-  <title>
-    
-  </title>
-
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <!--     Fonts and icons     -->
 
@@ -20,14 +13,17 @@
   <link href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css" rel="stylesheet">
   
   <!-- CSS Files -->
-
-  <link href="/assets/landing/css/bootstrap.min.scss" rel="stylesheet" />
-  <link href="/assets/landing/css/paper-kit.scss?v=2.2.0" rel="stylesheet" />
+  <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag    'landing', media: 'all', 'data-turbolinks-track': 'reload' %> 
+  <%= javascript_include_tag 'landing', 'data-turbolinks-track': 'reload' %> 
+  <%# <link href="/assets/landing/css/bootstrap.min.scss" rel="stylesheet" /> %>
+  <%# <link href="/assets/landing/css/paper-kit.scss?v=2.2.0" rel="stylesheet" /> %>
   <style>
     /* The animation code */
       @keyframes example {
-        from {background-image: url('https://wonderfulengineering.com/wp-content/uploads/2016/01/nature-wallpapers-38.jpg')}
-        to  {background-image: url('https://i.pinimg.com/originals/05/2c/77/052c779c22d9d7972e9d1e2b42dffd83.jpg')}
+        from {background-image: url('https://tribune-reloaded.s3.amazonaws.com/media/images/restaurants1593925683-0/restaurants1593925683-0.jpg')}
+              
+        to  {background-image: url('https://wanderfost.com/wp-content/uploads/2019/07/Hero_-_Abbey.jpg')}
       }
 
     /* The element to apply the animation to */
@@ -47,5 +43,6 @@
 <body class="landing-page sidebar-collapse">
   
   <%= yield%>
+  
 </body>
 </html>

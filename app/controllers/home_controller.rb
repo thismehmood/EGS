@@ -6,7 +6,7 @@ class HomeController < ApplicationController
 
   def login
   end
-
+  
   def contact_us
   end
 

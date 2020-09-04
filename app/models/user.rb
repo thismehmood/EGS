@@ -7,6 +7,8 @@ class User < ApplicationRecord
   # Validation
   # validates :first_name , presence: :true
   # validates :last_name , presence: :true
+  has_many :venues
+  # has_many :venues, class_name: 'Venue', foreign_key: 'venue_owner_id'
 
   def name
     return self.first_name + " " + self.last_name rescue nil

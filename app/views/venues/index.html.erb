@@ -1,0 +1,41 @@
+<div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
+ <div class="container">
+
+   <%= render "/layouts/landing"%>
+   <div class="row">
+     <div class="col-10">
+       <h2 style="margin: 0;">venues</h2>
+     </div>
+     <div class="col-12">
+       <a class="btn btn-success float-right btn-sm margin-top = 35px" href="/venues/new"> Create_venue </a>
+     </div>
+   </div>
+    <div  style = "position:relative; height:400px; overflow:auto; display:block;">
+      <table class="table table-bordered table-striped md-0 table-hover table-dark">
+       <thead>
+         <tr>
+           <th>#</th>
+           <th>name</th> 
+           <th>address</th>
+           <th>venue_type</th>
+           <th>contact_no</th>
+           <th> action</th>
+          </tr>
+       </thead>
+       <tbody >
+         <% @venue.each_with_index do |q|%> 
+           <tr>
+             <td><%= q.id%></td>
+             <td><%= q.name%></td>
+             <td><%= q.address%></td>
+             <td><%= q.venue_type%></td>
+             <td><%= q.contact_no%></td>
+             <td style="padding: 0px;"><a class="btn btn-success float-right btn-sm" href="/venues/<%= q.id%>"> view </a><td>
+             <td style="padding: 0px;"><a class="btn btn-success float-right btn-sm" href="/venues/<%= q.id%>/edit"> Edit </a><td>
+           </tr>
+         <%end%>   
+       </tbody>
+      </table>
+    </div>
+  </div>
+</div>

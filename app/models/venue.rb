@@ -1,3 +1,4 @@
 class Venue < ApplicationRecord
-  belongs_to :venue_owner
+    has_many :bookings
+    belongs_to :user
 end

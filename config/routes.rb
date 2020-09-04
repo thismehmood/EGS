@@ -1,12 +1,12 @@
 Rails.application.routes.draw do
   get 'pages/home'
+
+  devise_for :users, :controllers => { :sessions => "users/sessions" }
   
-  devise_for :users
-
   get 'home/index'
-
   get 'welcome/index'
   get 'landing/index'
+
 
   resources :landing
    
@@ -14,11 +14,11 @@ Rails.application.routes.draw do
   # resources :booking
   
   # login
-  get "/home/login" => "home#login"
+  # get "/home/login" => "home#login"
+ 
   # contact
   get "/contact/index" => "contact#index"
   # customer
-  
   resources :customers, only:  [:index, :new, :update]
   
   # get "/customers" =>  "customer#index" #, as: :customers
@@ -26,21 +26,28 @@ Rails.application.routes.draw do
   # post "/customers" => "customer#create", as: :customers
   # venue_owner
   # get 'booking/index'
-  
+
   resources :bookings
-  
   get "/venue_owner/" => "venue_owner#index"
   get "/venue_owner/new" =>  "venue_owner#new"
-  
-  # post "/saveVO" => "venue_owner#create"
 
-  # create_booking
+  get "/venue_owner/:id" => "venue_owner#update_subscription"
+  
+  # post "/saveVO" => "venue_owner#create" 
+          # create_booking
   get "/booking/index" => "booking#index"
   get  "/booking/new" => "booking#new"
   post  "/booking" => "booking#create"
   
+  # venue route
+
+  resources :venues 
+
+  # get "/venue/" => "venue#index"
+  # get "/venue/new" =>  "venue#new"
+  # post "venue_create" => "venue#create"
   # subscription
-  get "/subcription/index" => "subscription/index"
+  resources :subscription
      
   root 'landing#index' # ite means url '/'
   
