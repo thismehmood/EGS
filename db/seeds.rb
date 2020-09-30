@@ -10,15 +10,7 @@
 
  
 
- Bookings =	Booking.new(name: 'waheed' , contact_no: '+92563412310')
- Bookings.save
-
- Bookings =	Booking.new(name: 'hameed' , contact_no: '+92892323010')
- venue_owners.save
-
- bookings =	Booking.new(name: 'akbar' , contact_no: '+92128108345')
- venue_owners.save
-
+ 
  bookings =	booking.new(name: 'rails' , contact_no: '+92129834091')
  venue_owners.save
 

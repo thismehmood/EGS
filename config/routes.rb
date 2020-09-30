@@ -7,7 +7,6 @@ Rails.application.routes.draw do
   get 'welcome/index'
   get 'landing/index'
 
-
   resources :landing
    
   resources :customers
@@ -40,15 +39,15 @@ Rails.application.routes.draw do
   post  "/booking" => "booking#create"
   
   # venue route
-
+  
   resources :venues 
+  # post "/venues" => "venues#destroy"
 
   # get "/venue/" => "venue#index"
   # get "/venue/new" =>  "venue#new"
   # post "venue_create" => "venue#create"
   # subscription
   resources :subscription
-     
   root 'landing#index' # ite means url '/'
   
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
