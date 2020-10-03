@@ -8,7 +8,16 @@
          <div class="row justify-content-center">
             <% if user_signed_in? %>  
               <%if current_user.role == "venue_owner"%>
-               <div class="card" style="width:  15rem; margin-top: 20px;">
+                <div class="card" style="width: 15rem; margin-top: 20px; margin-left: 5px;">
+                  <img class="card-img-top" src="https://bangkokpartyrentals.com/wp-content/uploads/2018/10/25.jpg" alt="Card image cap">
+                 <div class="card-body">
+                   <h4 class="card-title">becomes an venue Partner</h4>
+                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                   <a href="venues" class="btn btn-primary btn-sm">Request venue</a>
+                 </div>
+                </div>
+              <% else %>
+              <div class="card" style="width:  15rem; margin-top: 20px;">
                   <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
                   <div class="card-body">      
                     <h4 class="card-title">Request An Event</h4>
@@ -16,14 +25,6 @@
                     <a href="booking/index" class="btn btn-primary btn-sm">Search For Event</a>
                   </div>
                </div>
-               <div class="card" style="width: 15rem; margin-top: 20px; margin-left: 5px;">
-                  <img class="card-img-top" src="/assets/daniel-olahs.jpg" alt="Card image cap">
-                 <div class="card-body">
-                   <h4 class="card-title">becomes an venue Partner</h4>
-                   <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="subscription" class="btn btn-primary btn-sm">Request venue</a>
-                 </div>
-                </div>
               <% end %>
             <% end %>     
         </div>

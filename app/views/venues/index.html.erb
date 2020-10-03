@@ -1,6 +1,5 @@
 <div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
  <div class="container">
-
    <%= render "/layouts/landing"%>
    <div class="row">
      <div class="col-10">
@@ -30,8 +29,9 @@
              <td><%= q.address%></td>
              <td><%= q.venue_type%></td>
              <td><%= q.contact_no%></td>
-             <td style="padding: 0px;"><a class="btn btn-success float-right btn-sm" href="/venues/<%= q.id%>"> view </a><td>
-             <td style="padding: 0px;"><a class="btn btn-success float-right btn-sm" href="/venues/<%= q.id%>/edit"> Edit </a><td>
+             <td style="padding: 0px;"  ><a class="btn btn-success float-right btn-sm"  href="/venues/<%= q.id%>"> view </a></td>
+             <td style="padding:0px;"><a class="btn btn-success float-right btn-sm" href="/venues/<%= q.id%>/edit"> Edit </a></td>
+             <td><%= link_to 'destroy', venue_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
            </tr>
          <%end%>   
        </tbody>
