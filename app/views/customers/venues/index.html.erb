@@ -134,7 +134,7 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(/assets/bg-img/bg-1.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(/assets/bg-img/50.jpg);"></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
@@ -156,7 +156,7 @@
             <!-- Single Hero Slide -->
             <div class="single-hero-slide d-flex align-items-center justify-content-center">
                 <!-- Slide Img -->
-                <div class="slide-img bg-img" style="background-image: url(/assets/bg-img/bg-2.jpg);"></div>
+                <div class="slide-img bg-img" style="background-image: url(/assets/bg-img/40.jpg);"></div>
                 <div class="container">
                     <div class="row justify-content-center">
                         <div class="col-12 col-lg-9">
@@ -269,132 +269,64 @@
 
             <div class="row justify-content-center">
                 <!-- Single Rooms Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="100ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/34.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $150/person</p>
-                        <!-- Rooms Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Home Menue Resturant Gulberg</h4>
-                                <p>Located at Gulberg 3 lahore,
-                            </p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book now</a>
-                    </div>
-                </div>
+               <% @venues.each_with_index do |v|%> 
+                 <!-- Mariage Palace Area -->
+                 <%if v.venue_type == "Hotel"%>
+                   <div class="col-12 col-md-6 col-lg-4">
+										 <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+												<!-- Thumbnail -->
+												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/17.jpg);"></div>
+												<!-- Price -->
+												<p class="price-from">From $50/person</p>
+												<div class="rooms-text">
+														<div class="line"></div>
+														<h4><%= v.name%></h4>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+																mauris sceleri sque.</p>
+												</div>
+												<!-- Registerd Mariage Palace -->
+												<a href=<%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
+									  	</div>
+							  	 </div>
+                   <%elsif v.venue_type == "Mariage Palace"%>
 
-                <!-- Single Rooms Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="300ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/35.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $120/person</p>
-                        <!-- resturant Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Fast Food+Resturant</h4>
-                            <p>French Fries. According to an annual report, French fries are the most ordered out of the most popular fast foods.Fried Chicken. ...
-                             Pizza.    
-                             </p>
-                        </div>
-                        <!-- Book now -->
-                        <%# <a href="/booking/new" class="book-room-btn btn palatin-btn">Book Room</a> %>
-                        <a href= '/booking/new' class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
+                   <div class="col-12 col-md-6 col-lg-4">
+									  	<div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+												<!-- Thumbnail -->
+												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
+												<!-- Price -->
+												<p class="price-from">From $70/person</p>
+												<div class="rooms-text">
+														<div class="line"></div>
+														<h4><%= v.name%></h4>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+																mauris sceleri sque.</p>
+												</div>
+												<!-- Registerd Mariage Palace -->
+												<a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
+									 	  </div>
+							  	  </div>
+										
+                   <%else v.venue_type == "Resturant"%>
 
-                <!-- Single Rooms Area -->
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $100/person</p>
-                        <!-- resturant Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Mariage Palace</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-                                mauris sceleri sque.</p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
-                   
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/41.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $100/person</p>
-                        <!-- Rooms Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Mariage Palace</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-                                mauris sceleri sque.</p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
-                 <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/43.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $90/person</p>
-                        <!-- Rooms Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Mariage Palace</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-                                mauris sceleri sque.</p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/45.jpg);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $80/person</p>
-                        <!-- Rooms Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Mariage Palace</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-                                mauris sceleri sque.</p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
-                <div class="col-12 col-md-6 col-lg-4">
-                    <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-                        <!-- Thumbnail -->
-                        <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/49.gif);"></div>
-                        <!-- Price -->
-                        <p class="price-from">From $70/person</p>
-                        <!-- Rooms Text -->
-                        <div class="rooms-text">
-                            <div class="line"></div>
-                            <h4>Mariage Palace</h4>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-                                mauris sceleri sque.</p>
-                        </div>
-                        <!-- Book Room -->
-                        <a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
-                    </div>
-                </div>
+										<div class="col-12 col-md-6 col-lg-4">
+									  	<div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+												<!-- Thumbnail -->
+												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/36.jpg);"></div>
+												<!-- Price -->
+												<p class="price-from">From $40/person</p>
+												<div class="rooms-text">
+														<div class="line"></div>
+														<h4><%= v.name%></h4>
+														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+																mauris sceleri sque.</p>
+												</div>
+												<!-- Registerd resturants -->
+												<a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
+									 	  </div>
+							  	  </div>
+                  <%end%>   
+                <%end%>
             </div>
         </div>
     </section>
@@ -431,7 +363,6 @@
                     </div>
                 </div>
             
-            </div>
             </div>
         </div>
     </footer>

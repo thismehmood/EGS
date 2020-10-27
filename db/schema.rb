@@ -10,24 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200901114920) do
+ActiveRecord::Schema.define(version: 20201008113116) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
-  create_table "articles", force: :cascade do |t|
-    t.string "title"
-    t.text "text"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "author_name"
-    t.string "Mehmood_name"
-  end
-
   create_table "bookings", force: :cascade do |t|
     t.string "name"
     t.string "booking_details"
-    t.bigint "customer_id"
     t.bigint "venue_id"
     t.string "reservation_details"
     t.datetime "created_at", null: false
@@ -35,19 +25,20 @@ ActiveRecord::Schema.define(version: 20200901114920) do
     t.string "location"
     t.string "group"
     t.datetime "date"
-    t.index ["customer_id"], name: "index_bookings_on_customer_id"
+    t.bigint "user_id"
     t.index ["venue_id"], name: "index_bookings_on_venue_id"
   end
 
   create_table "customers", force: :cascade do |t|
     t.string "name"
-    t.string "email"
-    t.string "address"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "city"
     t.string "phone"
     t.date "date_of_birth"
+    t.string "email"
+    t.string "address"
+    t.string "city"
+    t.string "pin_zip"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
     t.string "zip"
   end
 
@@ -103,7 +94,6 @@ ActiveRecord::Schema.define(version: 20200901114920) do
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 
-  add_foreign_key "bookings", "customers"
   add_foreign_key "bookings", "venues"
   add_foreign_key "payments", "bookings"
   add_foreign_key "subscriptions", "venues"

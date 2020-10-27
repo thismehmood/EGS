@@ -3,7 +3,7 @@
     <div class="filter"></div>
      <div class="container">
         <div class="motto text-center"> 
-         <h1>Corporative Effect affairs</h1>
+         <h1>Corporative Event affairs</h1>
         </div> 
          <div class="row justify-content-center">
             <% if user_signed_in? %>  
@@ -13,7 +13,7 @@
                  <div class="card-body">
                    <h4 class="card-title">becomes an venue Partner</h4>
                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                   <a href="venues" class="btn btn-primary btn-sm">Request venue</a>
+                   <a href="venue_owner/venues" class="btn btn-primary btn-sm">Request venue</a>
                  </div>
                 </div>
               <% else %>
@@ -22,7 +22,7 @@
                   <div class="card-body">      
                     <h4 class="card-title">Request An Event</h4>
                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                    <a href="booking/index" class="btn btn-primary btn-sm">Search For Event</a>
+                    <a href=<%= customers_venues_path%> class="btn btn-primary btn-sm">Search For Event</a>
                   </div>
                </div>
               <% end %>

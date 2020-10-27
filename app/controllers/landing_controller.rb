@@ -5,5 +5,9 @@ class LandingController < ApplicationController
     def index
              
     end
+    def show
+        @booking = Booking.all
+
+    end
     
 end

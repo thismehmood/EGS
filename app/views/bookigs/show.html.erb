@@ -1,9 +1,12 @@
+<h1>Booking has been created
+
+
 <div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
  <div class="container">
    <%= render "/layouts/landing"%>
    <div class="row">
      <div class="col-10">
-       <h2 style="margin: 0;">venues</h2>
+       <h2 style="margin: 0;">Bookings</h2>
      </div>
      <div class="col-12">
        <a class="btn btn-success float-right btn-sm margin-top = 35px" href="/venues/new"> Create_venue </a>
@@ -15,14 +18,14 @@
          <tr>
            <th>#</th>
            <th>name</th> 
-           <th>address</th>
-           <th>venue_type</th>
-           <th>contact_no</th>
-           <th> action</th>
+           <th>Details</th>
+           <th>location</th>
+           <th>group</th>
+           <th> date</th> 
           </tr>
        </thead>
        <tbody >
-         <% @venue.each_with_index do |q|%> 
+         <% @booking.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>
              <td><%= q.name%></td>

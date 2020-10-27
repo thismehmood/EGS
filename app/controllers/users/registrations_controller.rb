@@ -21,7 +21,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
         respond_with resource, location: after_sign_up_path_for(resource)
       else
         set_flash_message! :notice, :"signed_up_but_#{resource.inactive_message}"
-        expire_data_after_sign_in!
+        expire_data_after_sign_in!  
         respond_with resource, location: after_inactive_sign_up_path_for(resource)
       end
     else
@@ -38,9 +38,11 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # debugger  
       "/subscription" 
       else 
-        "landing#index"  
+        customers_venues_index_path  
       end
     end
+
+    
   # GET /resource/edit
   # def edit
   #   super

@@ -9,8 +9,8 @@ default: &default
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   timeout: 5000
   database: EGS_4
-  username: mehmood
-  password: m
+  username: postgres
+  password: 1234
 
 development:
   <<: *default

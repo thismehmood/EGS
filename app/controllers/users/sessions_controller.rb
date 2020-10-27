@@ -20,6 +20,15 @@ class Users::SessionsController < Devise::SessionsController
     respond_with resource, location: after_sign_in_path_for(resource)
   end 
 
+  private
+  def after_sign_in_path_for(resources)
+    if @user.role == 'venue_owner'
+     venue_owner_venues_path    
+    else 
+      customers_venues_path  
+    end
+    
+  end
   # DELETE /resource/sign_out
   # def destroy
   #   super
