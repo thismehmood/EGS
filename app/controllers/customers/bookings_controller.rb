@@ -7,7 +7,7 @@ class Customers::BookingsController < ApplicationController
      
     def new
         @venue = Venue.find_by_id(params[:venue_id])
-        @booking = Booking.new
+        @booking = Booking.new #
     end
 
     def show
@@ -15,6 +15,7 @@ class Customers::BookingsController < ApplicationController
     end
 
     def create
+        debugger
         @booking = Booking.new(booking_params)  
         @booking.user_id = current_user.id
         if @booking.save
@@ -27,7 +28,7 @@ class Customers::BookingsController < ApplicationController
     private 
     def booking_params
         #Strong Params
-        params.require(:booking).permit(:name,:reservation_details, :location, :group, :date)
+        params.require(:booking).permit(:name,:reservation_details, :location, :group, :date, :venue_id)
     end
     
 end

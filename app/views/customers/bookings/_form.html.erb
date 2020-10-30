@@ -10,8 +10,11 @@
        </ul>
      </div>
    <% end %>
-    <h3>Venue Name: <%= @venue.name%></h3>
+    <h3> Venue Name: <%= @venue.name%></h3>
     <form>
+
+      <input type="hidden" name="booking[venue_id]" value=<%= @venue.id%>>
+
       <div class="form-group col-md-6 ">
        <%= form.label :group %>
        <%= form.text_field :group, required: true, class: 'form-control' %>

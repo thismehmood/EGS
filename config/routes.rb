@@ -11,9 +11,9 @@ Rails.application.routes.draw do
     resources :venues, only: [:index, :show]
     resources :bookings, except: [:new] do
       # collection means we do not need any booking id 
-      # while its oppsite is member keywork which required id and add it to URL 
+      # while its opposite is member keywork which required id and add it to URL 
       collection do
-        get 'venues/:venue_id' => 'bookings#new', as: :new
+        get 'venues/:venue_id' => 'bookings#new', as: :new #
       end
     end
   end

@@ -285,13 +285,13 @@
 																mauris sceleri sque.</p>
 												</div>
 												<!-- Registerd Mariage Palace -->
-												<a href=<%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
+												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
 									  	</div>
 							  	 </div>
                    <%elsif v.venue_type == "Mariage Palace"%>
 
                    <div class="col-12 col-md-6 col-lg-4">
-									  	<div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+									  	 <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
 												<!-- Thumbnail -->
 												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
 												<!-- Price -->
@@ -303,9 +303,9 @@
 																mauris sceleri sque.</p>
 												</div>
 												<!-- Registerd Mariage Palace -->
-												<a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
+												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
 									 	  </div>
-							  	  </div>
+					 </div>
 										
                    <%else v.venue_type == "Resturant"%>
 
@@ -322,7 +322,7 @@
 																mauris sceleri sque.</p>
 												</div>
 												<!-- Registerd resturants -->
-												<a href="#" class="book-room-btn btn palatin-btn">Book Now</a>
+												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
 									 	  </div>
 							  	  </div>
                   <%end%>   

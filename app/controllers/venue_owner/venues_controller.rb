@@ -36,13 +36,7 @@ class VenueOwner::VenuesController < ApplicationController
 
 
   def create
-      @venue = Venue.new(
-          name: params[:venue][:name],
-          venue_type: params[:venue][:venue_type],
-          address: params[:venue][:address],
-          contact_no: params[:venue][:contact_no],
-          user_id: current_user.id
-      )
+      @venue = Venue.new(venue_params)
       @venue.save 
       respond_to do |format|
           # format.html # should automatically read move.js.erb 

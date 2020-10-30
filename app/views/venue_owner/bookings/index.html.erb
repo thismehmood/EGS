@@ -1,4 +1,3 @@
-<h1> hey1111111111111111111111111111</h1>
 <%= render "/layouts/landing"%>
 <div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
  <div class="container">
@@ -11,11 +10,10 @@
       <table class="table table-bordered table-striped md-0 table-hover table-dark">
        <thead>
          <tr>
-           <th>venue_id</th>
-           <th>user_id</th>
-           <th>name</th> 
-           <th>address</th>
-           <th>contact_no</th>
+           <th>booking_id</th>
+           <th>User name</th> 
+           <th>No_of_people</th> 
+           <th>Venues</th>
            <th> action</th>
           </tr>
        </thead>
@@ -23,10 +21,11 @@
          <% @booking.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>
-             <td><%= q.name%></td>
-             <td><%= q.address%></td>
-             <td><%= q.contact_no%></td>
-             <td style="padding:0px;"><a class="btn btn-success float-right btn-sm" href="/``_owner/venues/<%= q.id%>/edit"> Edit </a></td>
+             <td><%= q.user.name%></td>
+             <td><%= q.group%></td>
+             <td><%= q.venue.name%></td>
+
+             <td style="padding:0px;"><a class="btn btn-success float-right btn-sm" href="/venue_owner/venues/<%= q.id%>/edit"> Edit </a></td>
              <td><%= link_to 'destroy', venue_owner_venue_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
            </tr>
          <%end%>   
