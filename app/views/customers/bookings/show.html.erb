@@ -1,4 +1,3 @@
-<h1>Booking was successfully created</h1>
 <div class="page-header" data-parallax="true" style="background-image: url('https://wonderfulengineering.');">
  <div class="container">
    <%= render "/layouts/landing"%>
@@ -12,17 +11,30 @@
        <thead>
          <tr>
              <th>#</th>
-             <th>Cust_name</th> 
+             <th>customer_id</th>
+             <th>customer_name</th> 
              <th>Venue_name</th>
-             <th>Venue_contact_no</th>
+             <th>Venue_id</th>
+             <th>updated_at</th>
+             <th>created_at</th>
+
              <th>status</th>
           </tr>
        </thead>
        <tbody >
          <% @booking.each_with_index do |q|%> 
            <tr>
-             <td><%= q.id%></td>
-             <td><%= q.name%></td>
+             <td><%= q.id%></td>    
+             <td><%= q.user.id%></td>
+             <td><%= q.user.name%></td>
+             <td><%=q.venue.name%></td>
+             <td><%=q.venue.id%></td>
+             <td><%=q.updated_at%></td>
+             <td><%=q.created_at%></td>
+
+             <td><%= link_to 'Cancel', customers_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+
+
            </tr>
          <%end%>   
        </tbody>

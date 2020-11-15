@@ -9,8 +9,12 @@ class Customers::VenuesController < ApplicationController
   end
 
   def show
-      @venue = Venue.find_by_id(params[:id])
+      @venues = Venue.all
+  end
 
+  def search_venue
+    @venues = Venue.where('name LIKE ?', "%#{params[:search]}%")
+    render :index    
   end
 
 end

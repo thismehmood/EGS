@@ -14,11 +14,10 @@ Rails.application.routes.draw do
       # while its opposite is member keywork which required id and add it to URL 
       collection do
         get 'venues/:venue_id' => 'bookings#new', as: :new #
+        post '/search' , to: 'venues#search_venue', as: :search_venue
       end
     end
   end
-
-  
   # all venue_Owner routes
   namespace :venue_owner do
     resources :venues

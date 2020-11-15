@@ -30,27 +30,27 @@ ActiveRecord::Schema.define(version: 20201030130210) do
     t.index ["venue_id"], name: "index_bookings_on_venue_id"
   end
 
-  create_table "customers", force: :cascade do |t|
-    t.string "name"
-    t.string "phone"
-    t.date "date_of_birth"
-    t.string "email"
-    t.string "address"
-    t.string "city"
-    t.string "pin_zip"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.string "zip"
-  end
+  # create_table "customers", force: :cascade do |t|
+  #   t.string "name"
+  #   t.string "phone"
+  #   t.date "date_of_birth"
+  #   t.string "email"
+  #   t.string "address"
+  #   t.string "city"
+  #   t.string "pin_zip"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.string "zip"
+  # end
 
-  create_table "payments", force: :cascade do |t|
-    t.string "amount"
-    t.string "cashpaid"
-    t.bigint "booking_id"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["booking_id"], name: "index_payments_on_booking_id"
-  end
+  # create_table "payments", force: :cascade do |t|
+  #   t.string "amount"
+  #   t.string "cashpaid"
+  #   t.bigint "booking_id"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  #   t.index ["booking_id"], name: "index_payments_on_booking_id"
+  # end
 
   create_table "subscriptions", force: :cascade do |t|
     t.string "name"
@@ -75,14 +75,15 @@ ActiveRecord::Schema.define(version: 20201030130210) do
     t.text "subscription"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
   end
 
-  create_table "venue_owners", force: :cascade do |t|
-    t.string "name"
-    t.string "contact_no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
+  # create_table "venue_owners", force: :cascade do |t|
+  #   t.string "name"
+  #   t.string "contact_no"
+  #   t.datetime "created_at", null: false
+  #   t.datetime "updated_at", null: false
+  # end
 
   create_table "venues", force: :cascade do |t|
     t.string "name"

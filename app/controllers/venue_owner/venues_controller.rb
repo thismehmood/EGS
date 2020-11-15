@@ -46,7 +46,7 @@ class VenueOwner::VenuesController < ApplicationController
   end
   
   def update_subscription
-      current_user.update(subsription: parmas[subscription])
+      current_user.update(subsription: params[subscription])
       redirect_to venue_owner_venues_path
   end
   
@@ -54,7 +54,7 @@ class VenueOwner::VenuesController < ApplicationController
       @venue = Venue.find(params[:id])
       @venue.destroy
       respond_to do |format|
-      format.html { redirect_to venue_owner_venues_url, notice: 'Venue was successfully destroyed.' }
+      format.html { redirect_to venue_owner_venue_url, notice: 'Venue was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
