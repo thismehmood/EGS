@@ -25,7 +25,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="nav-brand">Corperative Event Affairs </a>
+                        <a href="index.html" class="btn palatin-btn">Corperative Event Affairs </a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -38,16 +38,18 @@
                             <div class="classycloseIcon">
                                 <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
                             </div>
+
                             <!-- Nav Start -->
-                            <div class="classynav">
+                            <div class="classynav  ">
                              <!-- Search form -->
                               <form method ="post" action='/customers/bookings/search'  class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
                                  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
                                  aria-label="Search"
                                  name="search">
-                                 <i class="fas fa-search" aria-hidden="true"></i>
-                             </form>                    
-                            </div>
+                             </form>                           
+                            </div>   
+ 
+                        <a href=<%= customers_bookings_path(@booking)%> class="btn palatin-btn">see bookings</a>
                             <!-- Nav End -->
                         </div>
                     </nav>
@@ -70,74 +72,66 @@
             </div>
 
             <div class="row justify-content-center">
-                <!-- Single Rooms Area -->
                <% @venues.each_with_index do |v|%> 
                  <!-- Mariage Palace Area -->
                  <%if v.venue_type == "Hotel"%>
                      <div class="col-12 col-md-6 col-lg-4">
 							<div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-												<!-- Thumbnail -->
-												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/17.jpg);"></div>
-												<!-- Price -->
-												<p class="price-from">From $50/person</p>
-												<div class="rooms-text">
-														<div class="line"></div>
-														<h4><%= v.name%></h4>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-																mauris sceleri sque.</p>
-												</div>
-												<!-- Registerd Mariage Palace -->
-												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
+                                <!-- Thumbnail -->
+                                <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/17.jpg);"></div>
+                                <!-- Price -->
+                                <p class="price-from">From $50/person</p>
+                                <div class="rooms-text">
+                                        <div class="line"></div>
+                                        <h4><%= v.name%></h4>
+                                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+                                                mauris sceleri sque.</p>
+                                </div>
+                                <!-- Registerd Mariage Palace -->
+                                <a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
 							 </div>
 					 </div>
+
                    <%elsif v.venue_type == "Mariage Palace"%>
-
                    <div class="col-12 col-md-6 col-lg-4">
-									  	 <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-												<!-- Thumbnail -->
-												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
-												<!-- Price -->
-												<p class="price-from">From $70/person</p>
-												<div class="rooms-text">
-														<div class="line"></div>
-														<h4><%= v.name%></h4>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-																mauris sceleri sque.</p>
-												</div>
-												<!-- Registerd Mariage Palace -->
-												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
-									 	  </div>
+                        <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+                            <!-- Thumbnail -->
+                            <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
+                            <!-- Price -->
+                            <p class="price-from">From $70/person</p>
+                            <div class="rooms-text">
+                                    <div class="line"></div>
+                                    <h4><%= v.name%></h4>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+                                            mauris sceleri sque.</p>
+                            </div>
+                            <!-- Registerd Mariage Palace -->
+                            <a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
+                        </div>
 					 </div>
-										
-                   <%else v.venue_type == "Resturant"%>
-
-										<div class="col-12 col-md-6 col-lg-4">
-									  	<div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
-												<!-- Thumbnail -->
-												<div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/36.jpg);"></div>
-												<!-- Price -->
-												<p class="price-from">From $40/person</p>
-												<div class="rooms-text">
-														<div class="line"></div>
-														<h4><%= v.name%></h4>
-														<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
-																mauris sceleri sque.</p>
-												</div>
-												<!-- Registerd resturants -->
-												<a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
-									 	  </div>
-							  	  </div>
+                     
+					 <%else v.venue_type == "Resturant"%>
+                        <div class="col-12 col-md-6 col-lg-4">
+                            <div class="single-rooms-area wow fadeInUp" data-wow-delay="500ms">
+                                    <!-- Thumbnail -->
+                                    <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/36.jpg);"></div>
+                                    <!-- Price -->
+                                    <p class="price-from">From $40/person</p>
+                                    <div class="rooms-text">
+                                            <div class="line"></div>
+                                            <h4><%= v.name%></h4>
+                                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus
+                                                    mauris sceleri sque.</p>
+                                    </div>
+                                    <!-- Registerd resturants -->
+                                    <a href= <%= new_customers_bookings_path(venue_id: v.id)%> class="book-room-btn btn palatin-btn">Book Now</a>
+                                </div>
+							</div>
                   <%end%>   
                 <%end%>
             </div>
         </div>
     </section>
-    <!-- ##### Rooms Area End ##### -->
-
-    <!-- ##### Contact Area Start ##### -->
-
-    <!-- ##### Contact Area End ##### -->
-
     <!-- ##### Footer Area Start ##### -->
     <footer class="footer-area">
         <div class="container">

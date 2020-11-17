@@ -22,7 +22,7 @@
           </tr>
        </thead>
        <tbody >
-         <% @booking.each_with_index do |q|%> 
+         <% @bookings.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>    
              <td><%= q.user.id%></td>
@@ -31,10 +31,7 @@
              <td><%=q.venue.id%></td>
              <td><%=q.updated_at%></td>
              <td><%=q.created_at%></td>
-
              <td><%= link_to 'Cancel', customers_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
-
-
            </tr>
          <%end%>   
        </tbody>
