@@ -11,8 +11,11 @@
        <thead>
          <tr>
            <th>booking_id</th>
-           <th>User name</th> 
+           <th>customer_id</th>
+           <th>customer name</th> 
            <th>No_of_people</th> 
+           <th>venue_owner_id</th>
+           <%# <th>venue_owner_email</th> %>
            <th>Venues</th>
            <th> action</th>
           </tr>
@@ -21,12 +24,15 @@
          <% @booking.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>
+             <td><%= q.user.id%>
              <td><%= q.user.name%></td>
-             <td><%= q.group%></td>
+             <td><%= q.group%></td>           
+             <td><%= q.venue.user.id%>
+             <%# <td><% q.venue.user.email%>
              <td><%= q.venue.name%></td>
 
              <td style="padding:0px;"><a class="btn btn-success float-right btn-sm" href="/venue_owner/venues/<%= q.id%>/edit"> Edit </a></td>
-             <td><%= link_to 'destroy', venue_owner_venue_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+             <td><%= link_to 'destroy', venue_owner_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
            </tr>
          <%end%>   
        </tbody>

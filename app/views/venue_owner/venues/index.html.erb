@@ -16,6 +16,7 @@
        <thead>
          <tr>
            <th>#</th>
+           <th> Venue_owner_ID</th>
            <th>name</th> 
            <th>address</th>
            <th>venue_type</th>
@@ -27,6 +28,7 @@
          <% @venue.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>
+             <td><%= q.user.id%>
              <td><%= q.name%></td>
              <td><%= q.address%></td>
              <td><%= q.venue_type%></td>

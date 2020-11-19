@@ -52,12 +52,13 @@ class VenueOwner::VenuesController < ApplicationController
   
   def destroy
       @venue = Venue.find(params[:id])
+      debugger
       @venue.destroy
       respond_to do |format|
-      format.html { redirect_to venue_owner_venue_url, notice: 'Venue was successfully destroyed.' }
-      format.json { head :no_content }
+          format.html { redirect_to venue_owner_venue_url, notice: 'Venue was successfully destroyed.' }
+          format.json { head :no_content }
+       end
     end
-  end
 
 
   private 

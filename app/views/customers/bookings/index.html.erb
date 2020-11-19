@@ -14,10 +14,9 @@
              <th>customer_id</th>
              <th>customer_name</th> 
              <th>Venue_name</th>
-             <th>Venue_id</th>
+             <th>Venue Owner ID</th>
              <th>updated_at</th>
              <th>created_at</th>
-
              <th>status</th>
           </tr>
        </thead>
@@ -28,7 +27,7 @@
              <td><%= q.user.id%></td>
              <td><%= q.user.name%></td>
              <td><%=q.venue.name%></td>
-             <td><%=q.venue.id%></td>
+             <td><%=q.venue.user.id%></td>
              <td><%=q.updated_at%></td>
              <td><%=q.created_at%></td>
              <td><%= link_to 'Cancel', customers_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
