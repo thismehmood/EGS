@@ -7,8 +7,7 @@ class VenueOwner::VenuesController < ApplicationController
   def index
       # @venue = current_user.venues
       # Both Lines are working similar
-      @venue = Venue.where(user_id: current_user.id)
-      
+      @venue = Venue.where(user_id: current_user.id)   
   end
 
   def new 
@@ -29,7 +28,7 @@ class VenueOwner::VenuesController < ApplicationController
       @venue = Venue.find(params[:id])
       if @venue.update(venue_params)
           redirect_to venue_owner_venues_path, notice: 'Venue was successfully updated.'
-      else
+        
           render :edit 
       end
   end
@@ -43,11 +42,6 @@ class VenueOwner::VenuesController < ApplicationController
           format.html { redirect_to venue_owner_venues_path } 
         end
       # debugger
-  end
-  
-  def update_subscription
-      current_user.update(subsription: params[subscription])
-      redirect_to venue_owner_venues_path
   end
   
   def destroy

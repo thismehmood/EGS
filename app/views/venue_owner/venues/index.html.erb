@@ -8,7 +8,6 @@
      <div class="col-12">
        <a class="btn btn-success float-right btn-sm margin-top = 35px"  href=<%= new_venue_owner_venue_path%> > Create_venue </a>
        <a class="btn btn-success float-right btn-sm margin-top = 35px" href=<%= venue_owner_bookings_path%> > All_Bookings </a>
-
      </div>
    </div>
     <div  style = "position:relative; height:400px; overflow:auto; display:block;">
@@ -24,7 +23,7 @@
            <th> action</th>
           </tr>
        </thead>
-       <tbody >
+       <tbody>
          <% @venue.each_with_index do |q|%> 
            <tr>
              <td><%= q.id%></td>

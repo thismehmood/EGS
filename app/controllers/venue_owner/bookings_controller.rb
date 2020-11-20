@@ -9,11 +9,20 @@ class VenueOwner::BookingsController < ApplicationController
      def destroy    
       debugger
       @booking = Booking.find(params[:id])
-      
         if @booking.destroy!
           BookingMailer.with(booking: @booking, venue:@venue).cancel_booking_email.deliver_now
-           redirect_to venue_owner_bookings_path, notice: 'Venue was successfully destroyed.'      # end
-
+           redirect_to venue_owner_bookings_path, notice: 'Venue was successfully destroyed.'  
         end
       end
+
+      def approve
+         @booking = Booking.find_by_id(params[:id])
+         @booking.update(status: "approved")
+
+         if @booking.status == "approved"
+             BookingMailer.with(booking: @booking, venue:@venue).approved_booking_email.deliver_now
+            redirect_to venue_owner_bookings_path, notice: "Booking successfully approved"
+         end
+       end
+
   end

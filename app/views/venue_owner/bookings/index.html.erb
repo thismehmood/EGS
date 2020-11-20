@@ -28,11 +28,10 @@
              <td><%= q.user.name%></td>
              <td><%= q.group%></td>           
              <td><%= q.venue.user.id%>
-             <%# <td><% q.venue.user.email%>
              <td><%= q.venue.name%></td>
-
              <td style="padding:0px;"><a class="btn btn-success float-right btn-sm" href="/venue_owner/venues/<%= q.id%>/edit"> Edit </a></td>
              <td><%= link_to 'destroy', venue_owner_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+             <td><%= link_to 'Approve', approve_venue_owner_booking_path(q), data:{confirm: 'Are you sure?'}%></td>
            </tr>
          <%end%>   
        </tbody>

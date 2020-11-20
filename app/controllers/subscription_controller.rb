@@ -1,7 +1,10 @@
 class SubscriptionController < ApplicationController
 
-    def index
-    #    @subcription = Subcription.all;
+    def create_subscription
+        debugger
+            current_user.update(subscription: params[:subscription_type])
+            redirect_to venue_owner_venues_path 
     end
+    
     
 end

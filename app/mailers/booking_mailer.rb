@@ -4,12 +4,16 @@ class BookingMailer < ApplicationMailer
         @booking = params[:booking]
         @venue   = params[:venue]
     
-        mail(to: @venue.venue_owner.email, subject: "You got a new order!")
+        mail(to: 'mehmood16040@gmail.com', subject: "You got a new order!")
       end
       def cancel_booking_email
            @booking = params[:booking]
            @venue   = params[:venue]
-           mail( to: @booking.user.email, subject: "Your Booking Request has been rejected" )
-      
+           mail( to: 'this.mehmood@gmail.com', subject: "Your Booking Request has been rejected" ) 
+      end
+      def approved_booking_email
+           @booking = params[:booking]
+           @venue   = params[:venue]
+           mail( to: 'this.mehmood@gmail.com', subject:"your booking request approved")
       end
 end
