@@ -38,7 +38,7 @@ class Users::RegistrationsController < Devise::RegistrationsController
       # debugger  
       "/subscription" 
       else 
-        customers_venues_index_path  
+        customers_venues_path  
       end
     end
 

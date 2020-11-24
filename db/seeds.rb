@@ -8,9 +8,4 @@
 
     # Customer.create([{name:'Hamaad_Ahar'},{email:'this.hammad_azhar@gmailcom'},{address: 'lahore'}])
 
- 
-
- 
- bookings =	booking.new(name: 'rails' , contact_no: '+92129834091')
- venue_owners.save
-
+AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?

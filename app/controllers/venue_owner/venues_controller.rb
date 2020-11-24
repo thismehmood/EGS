@@ -35,8 +35,9 @@ class VenueOwner::VenuesController < ApplicationController
 
 
   def create
-      @venue = Venue.new(venue_params)
-      @venue.save 
+      @venue = Venue.new(venue_params) 
+      @venue.user_id = current_user.id
+      @venue.save! 
       respond_to do |format|
           # format.html # should automatically read move.js.erb 
           format.html { redirect_to venue_owner_venues_path } 
@@ -47,9 +48,9 @@ class VenueOwner::VenuesController < ApplicationController
   def destroy
       @venue = Venue.find(params[:id])
       debugger
-      @venue.destroy
+      @venue.destroy!
       respond_to do |format|
-          format.html { redirect_to venue_owner_venue_url, notice: 'Venue was successfully destroyed.' }
+          format.html { redirect_to venue_owner_venues_url, notice: 'Venue was successfully destroyed.' }
           format.json { head :no_content }
        end
     end
