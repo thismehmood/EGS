@@ -25,7 +25,7 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="btn palatin-btn">Corperative Event Affairs </a>
+                        <a href = <%=customers_venues_path%> class="btn palatin-btn">Corperative Event Affairs </a>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
@@ -80,7 +80,7 @@
                                 <!-- Thumbnail -->
                                 <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/17.jpg);"></div>
                                 <!-- Price -->
-                                <p class="price-from">From $50/person</p>
+                               <p class="price-from">From $<%= v.price%>/Person</p> 
                                 <div class="rooms-text">
                                         <div class="line"></div>
                                         <h4><%= v.name%></h4>
@@ -98,7 +98,7 @@
                             <!-- Thumbnail -->
                             <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/42.jpg);"></div>
                             <!-- Price -->
-                            <p class="price-from">From $70/person</p>
+                            <p class="price-from">From $<%= v.price%>/Person</p>
                             <div class="rooms-text">
                                     <div class="line"></div>
                                     <h4><%= v.name%></h4>
@@ -116,7 +116,7 @@
                                     <!-- Thumbnail -->
                                     <div class="bg-thumbnail bg-img" style="background-image: url(/assets/bg-img/36.jpg);"></div>
                                     <!-- Price -->
-                                    <p class="price-from">From $40/person</p>
+                                  <p class="price-from">From $<%= v.price%>/Person</p> 
                                     <div class="rooms-text">
                                             <div class="line"></div>
                                             <h4><%= v.name%></h4>

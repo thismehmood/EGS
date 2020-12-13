@@ -13,6 +13,10 @@
               <%= form.select :venue_type, ['Hotel', 'Resturant','Mariage Palace'],{},{ class: "form-control"}%>
            </div>
            <div class="form-group">
+            <%= label(:venue, :price)%>
+              <%= form.text_field :price ,class: "form-control"%>
+           </div>
+           <div class="form-group">
               <%= label(:venue, :contact_no)%>
               <%= form.text_field :contact_no ,class: "form-control"%>
            </div>

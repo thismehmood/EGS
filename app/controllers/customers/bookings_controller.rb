@@ -56,11 +56,13 @@ class Customers::BookingsController < ApplicationController
         @booking = Booking.find(params[:id])
         @booking.destroy
         respond_to do |format|
-        format.html { redirect_to customers_bookings_url, notice: 'booking was successfully destroyed.' }
+        format.html { redirect_to customers_bookings _url, notice: 'booking was successfully destroyed.' }
         format.json { head :no_content }
       end
     end
 
+    # these are called strong params which is security features which allows
+#  only specific keys to be accepted from the web page
     private 
     def booking_params
         #Strong Params

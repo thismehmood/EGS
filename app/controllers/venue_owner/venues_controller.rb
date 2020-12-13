@@ -12,7 +12,6 @@ class VenueOwner::VenuesController < ApplicationController
 
   def new 
       @venue = Venue.new
-      render :new
   end 
 
   def show
@@ -25,19 +24,18 @@ class VenueOwner::VenuesController < ApplicationController
   end
 
   def update
+    debugger    
       @venue = Venue.find(params[:id])
       if @venue.update(venue_params)
-          redirect_to venue_owner_venues_path, notice: 'Venue was successfully updated.'
-        
-          render :edit 
+          redirect_to venue_owner_venues_path, notice: 'Venue was successfully updated.'        
       end
   end
 
-
   def create
+    debugger
       @venue = Venue.new(venue_params) 
       @venue.user_id = current_user.id
-      @venue.save! 
+      @venue.save
       respond_to do |format|
           # format.html # should automatically read move.js.erb 
           format.html { redirect_to venue_owner_venues_path } 
@@ -47,18 +45,18 @@ class VenueOwner::VenuesController < ApplicationController
   
   def destroy
       @venue = Venue.find(params[:id])
-      debugger
-      @venue.destroy!
+      @venue.destroy
       respond_to do |format|
           format.html { redirect_to venue_owner_venues_url, notice: 'Venue was successfully destroyed.' }
           format.json { head :no_content }
        end
     end
 
-
+# these are called strong params which is security features which allows
+#  only specific keys to be accepted from the web page
   private 
   def venue_params
-      params.require(:venue).permit(:name,:venue_type, :address, :contact_no,)
+      params.require(:venue).permit(:name,:address,:venue_type,:price, :contact_no,)
   end
     
 end
