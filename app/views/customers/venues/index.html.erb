@@ -25,33 +25,26 @@
                     <nav class="classy-navbar justify-content-between" id="palatinNav">
 
                         <!-- Nav brand -->
-                        <a href="index.html" class="btn palatin-btn">Corperative Event Affairs </a>
+                        <%# <a href="index.html" class="btn palatin-btn">Corperative Event Affairs </a> %>
 
                         <!-- Navbar Toggler -->
                         <div class="classy-navbar-toggler">
                             <span class="navbarToggler"><span></span><span></span><span></span></span>
                         </div>
 
-                        <!-- Menu -->
-                        <div class="classy-menu">
-                            <!-- close btn -->
-                            <div class="classycloseIcon">
-                                <div class="cross-wrap"><span class="top"></span><span class="bottom"></span></div>
-                            </div>
-
-                            <!-- Nav Start -->
-                            <div class="classynav  ">
-                             <!-- Search form -->
-                              <form method ="post" action='/customers/bookings/search'  class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
+                            <div class = "classy-menu" >
+                              <!-- Nav Start -->
+                             <div class="classynav" >
+                               <!-- Search form -->
+                               <form method ="post" action='/customers/bookings/search'  class="form-inline d-flex justify-content-center md-form form-sm active-cyan-2 mt-2">
                                  <input class="form-control form-control-sm mr-3 w-75" type="text" placeholder="Search"
-                                 aria-label="Search"
-                                 name="search">
-                             </form>                           
-                            </div>   
- 
-                        <a href=<%= customers_bookings_path(@booking)%> class="btn palatin-btn">see bookings</a>
+                                 aria-label="Search" name="search">
+                                </form>                           
+                             </div>   
+                            </div>
+                              <a href=<%= customers_bookings_path(@booking)%> class="btn palatin-btn">see bookings</a>
                             <!-- Nav End -->
-                        </div>
+                         </div>
                     </nav>
                 </div>
             </div>
@@ -62,8 +55,7 @@
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-12 col-lg-6">
-                    <div class="section-heading text-center">
-                        <div class="line-"></div>
+                    <div class="section-heading text-center ">
                         <h2>Choose a Venue</h2>
                         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec malesuada lorem maximus mauris
                             sceleri sque, at rutrum nulla dictum. Ut ac ligula sapien.</p>

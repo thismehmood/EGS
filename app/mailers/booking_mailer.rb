@@ -3,8 +3,7 @@ class BookingMailer < ApplicationMailer
         debugger
         @booking = params[:booking]
         @venue   = params[:venue]
-    
-        mail(to: 'mehmood16040@gmail.com', subject: "You got a new order!")
+        mail(to: 'mehmood16040@gmail.com', subject: "You got a new booking!")
       end
       def cancel_booking_email
            @booking = params[:booking]

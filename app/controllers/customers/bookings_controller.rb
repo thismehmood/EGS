@@ -24,10 +24,13 @@ class Customers::BookingsController < ApplicationController
         @booking = Booking.new(booking_params)  
         @booking.user_id = current_user.id
         if @booking.save!
-            BookingMailer.with(booking: @booking, venue: @venue).new_booking_email.deliver_now
+            BookingMailer.with(booking: @booking, venue: @venue).new_booking_email.deliver_later
             flash[:success] = "Thank you for your booking! We'll get contact you soon!"
             redirect_to customers_bookings_path(@booking), notice: 'booking was successfully updated.'   
-      end 
+        else
+          flash[:alert] = "Your account has expired! please contact admin."
+          redirect_to customers_bookings_path(@booking), notice: 'booking was successfully updated.'   
+        end 
         # debugger    
         # @booking = Booking.new(booking_params)  
         # @booking.user_id = current_user.id
@@ -49,18 +52,20 @@ class Customers::BookingsController < ApplicationController
 
               
 
-      end 
+    end 
 
     def destroy
       # debugger
         @booking = Booking.find(params[:id])
         @booking.destroy
         respond_to do |format|
-        format.html { redirect_to customers_bookings_url, notice: 'booking was successfully destroyed.' }
-        format.json { head :no_content }
+        format.html { redirect_to customers_bookings_path, notice: 'booking was successfully destroyed.' }
+        # format.json { head :no_content }
       end
     end
 
+    # these are called strong params which is security features which allows
+#  only specific keys to be accepted from the web page
     private 
     def booking_params
         #Strong Params

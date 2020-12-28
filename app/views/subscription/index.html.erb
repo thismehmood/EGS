@@ -23,14 +23,11 @@
                     <div class="card-body">
                       <i class="mdi mdi-cube-outline pricing-plan-icon"></i>
                       <p class="pricing-plan-title">Basic</p>
-                      <h3 class="pricing-plan-cost ml-auto">FREE</h3>
+                      <h3 class="pricing-plan-cost ml-auto">$0</h3>
                       <ul class="pricing-plan-features">
-                        <li>Unlimited conferences</li>
-                        <li>100 participants max</li>
-                        <li>Custom Hold Music</li>
-                        <li>10 participants max</li>
+                        <li>Only 5 Venues at once(per week)</li>
                       </ul>
-                      <a href="/subscription/create/free" class="btn pricing-plan-purchase-btn">Free</a>
+                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'basic')%> class="btn pricing-plan-purchase-btn">purchase</a>
                       <%# <button  type="submit" class="btn pricing-plan-purchase-btn">Free</button> %>
                    </div>
                  </div>
@@ -43,12 +40,12 @@
                       <p class="pricing-plan-title">Pro</p>
                       <h3 class="pricing-plan-cost ml-auto">$49</h3>
                       <ul class="pricing-plan-features">
-                        <li>Unlimited conferences</li>
-                        <li>100 participants max</li>
-                        <li>Custom Hold Music</li>
-                        <li>10 participants max</li>
+                        <li>Only 20 Venues at once(per week)</li>
+                        <%# <li>100 participants max</li> %>
+                        <%# <li>Custom Hold Music</li> %>
+                        <%# <li>10 participants max</li> %>
                       </ul>
-                      <a href="/subscription/create/purchase" class="btn pricing-plan-purchase-btn">Purchase</a>
+                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'pro')%> class="btn pricing-plan-purchase-btn">Purchase</a>
                     </div>
                   </div>
             </div>
@@ -59,12 +56,12 @@
                       <p class="pricing-plan-title">Enterprise</p>
                       <h3 class="pricing-plan-cost ml-auto">$69</h3>
                       <ul class="pricing-plan-features">
-                        <li>Unlimited conferences</li>
-                        <li>100 participants max</li>
-                        <li>Custom Hold Music</li>
-                        <li>10 participants max</li>
+                        <li>Unlimited Venues</li>
+                        <%# <li>100 participants max</li> %>
+                        <%# <li>Custom Hold Music</li> %>
+                        <%# <li>10 participants max</li> %>
                       </ul>
-                      <a href="/subscription/create/enterprise" class="btn pricing-plan-purchase-btn">Enterprise</a>
+                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'enterprise')%>  class="btn pricing-plan-purchase-btn">Purchase</a>
                     </div>
                   </div>
                  </div>

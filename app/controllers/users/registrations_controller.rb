@@ -35,10 +35,10 @@ class Users::RegistrationsController < Devise::RegistrationsController
   private
     def after_sign_up_path_for(resources)
       if @user.role == 'venue_owner'
-      # debugger  
+      debugger  
       "/subscription" 
       else 
-        customers_venues_index_path  
+        customers_venues_path  
       end
     end
 

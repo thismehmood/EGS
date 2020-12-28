@@ -20,29 +20,36 @@ Rails.application.routes.draw do
   end
   # all venue_Owner routes
   namespace :venue_owner do
-     resources :venues
-       resources :bookings do
-           member do 
-            get :approve
-          end
-       end
+    resources :payments  do 
+      collection do
+         get :get_subscription_payment
+         get :update_subscription_payment
+      end
+    end
+    resources :venues 
+    resources :bookings do
+      member do 
+        get :approve
+      end
+    end
+
    end
-  
-  
+   
+  # subscription
+  resources :subscription
+    get "/subscription/create/:subscription_type" => "subscription#create_subscription"
+
+end
+
+
+
   # get 'landing/index'
 # Landing route
   # resources :landing
 
   #  Customer route
- 
-
   # login
   # get "/home/login" => "home#login"
- 
-  
-  
-  
-  
   # get "/venue_owner/:id" => "venue_owner#update_subscription"
   
   # post "/saveVO" => "venue_owner#create" 
@@ -58,11 +65,6 @@ Rails.application.routes.draw do
   # get "/venue/" => "venue#index"
   # get "/venue/new" =>  "venue#new"
   # post "venue_create" => "venue#create"
-  # subscription
-  resources :subscription
-  get "/subscription/create/:subscription_type" => "subscription#create_subscription"
-  
-  
-  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-end
+
+
