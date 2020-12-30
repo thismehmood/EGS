@@ -34,16 +34,17 @@ class VenueOwner::VenuesController < ApplicationController
   end
 
   def create
-    
       @current_user_venues = Venue.where(user_id: current_user.id)
-     
-      if current_user_venues.count  > 5 
-        redirect_to venue_owner_venues_path, notice: "Please upgrade your subscripton to create new venues"
+     debugger
+    #  Check what is the subscription limit of venue owner and then check if 
+    #  he can make a new venue or not.
+      if ((current_user.subscription  == 'basic' && current_user_venues.count  == 2)  || (current_user.subscription  == 'pro' && current_user_venues.count  == 5))
+        redirect_to venue_owner_venues_path, notice: "Please upgrade your subscripton to create new venues" 
       else
         @venue = Venue.new(venue_params)
         @venue.user_id = current_user.id
         @venue.save
-        redirect_to venue_owner_venues_path 
+        redirect_to venue_owner_venues_path
       end
     end
   

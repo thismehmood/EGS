@@ -10,7 +10,8 @@ class User < ApplicationRecord
   has_many :venues
   has_many :payments
   # has_many :venues, class_name: 'Venue', foreign_key: 'venue_owner_id'
-  enum subscription: [basic: "basic", pro: "pro", enterprise: "enterprise"]
+  enum subscription: {basic: "basic", pro: "pro", enterprise: "enterprise"}
+  
   def name
     return self.first_name + " " + self.last_name rescue nil
   end
