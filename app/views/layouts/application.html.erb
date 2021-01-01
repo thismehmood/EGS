@@ -9,6 +9,10 @@
 
   <body>
     <%= stylesheet_link_tag "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" %>
+      <%=debugger%>
+    <% flash.each do |key, value| %>
+        <div class="alert alert-<%= key %>"><%= value %></div>
+      <% end %>
     <%# <%= render 'layouts/alert' %>
     <%# <%= render 'layouts/wrapper'%>
     <%= yield %>

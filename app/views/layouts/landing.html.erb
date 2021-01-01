@@ -40,7 +40,9 @@
 </head>
 
 <body class="landing-page sidebar-collapse">
-  
+  <% flash.each do |key, value| %>
+    <div class="mb-0 alert alert-<%= key %>"><%= value %></div>
+  <% end %>
   <%= yield%>
   
 </body>
