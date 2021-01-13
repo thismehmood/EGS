@@ -104,13 +104,7 @@ ActiveRecord::Schema.define(version: 20201221185415) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  create_table "venue_owners", force: :cascade do |t|
-    t.string "name"
-    t.string "contact_no"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-  end
-
+  
   create_table "venues", force: :cascade do |t|
     t.string "name"
     t.string "address"
@@ -119,7 +113,7 @@ ActiveRecord::Schema.define(version: 20201221185415) do
     t.bigint "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "price_per_hour"
+    t.integer "price"
     t.index ["user_id"], name: "index_venues_on_user_id"
   end
 

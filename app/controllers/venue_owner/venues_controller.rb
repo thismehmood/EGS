@@ -13,7 +13,6 @@ class VenueOwner::VenuesController < ApplicationController
 
   def new 
       @venue = Venue.new
-      render :new
   end 
 
   def show
@@ -26,10 +25,10 @@ class VenueOwner::VenuesController < ApplicationController
   end
 
   def update
+    debugger    
       @venue = Venue.find(params[:id])
       if @venue.update(venue_params)
-          redirect_to venue_owner_venues_path, notice: 'Venue was successfully updated.'
-          # render :edit 
+          redirect_to venue_owner_venues_path, notice: 'Venue was successfully updated.'        
       end
   end
 
@@ -59,10 +58,11 @@ class VenueOwner::VenuesController < ApplicationController
        end
     end
 
-
+# these are called strong params which is security features which allows
+#  only specific keys to be accepted from the web page
   private 
   def venue_params
-      params.require(:venue).permit(:name,:venue_type, :address, :contact_no,)
+      params.require(:venue).permit(:name,:address,:venue_type,:price, :contact_no,)
   end
     
 end
