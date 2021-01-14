@@ -30,7 +30,7 @@
              <td><%=q.venue.user.id%></td>
              <td><%=q.updated_at%></td>
              <td><%=q.created_at%></td>
-             <td><%= link_to 'Cancel', customers_booking_path(q), method: :delete, data: { confirm: 'Are you sure?' }%> </td>
+             <td><%= link_to 'Cancel' ,customers_booking_path(q), class: "btn btn-success" ,method: :delete, data: { confirm: 'Are you sure?' }%> </td>
            </tr>
          <%end%>   
        </tbody>

@@ -22,49 +22,17 @@
                     <div class="card pricing-card pricing-plan-basic">
                     <div class="card-body">
                       <i class="mdi mdi-cube-outline pricing-plan-icon"></i>
-                      <p class="pricing-plan-title">Basic</p>
-                      <h3 class="pricing-plan-cost ml-auto">$0</h3>
-                      <ul class="pricing-plan-features">
-                        <li>Only 5 Venues at once(per week)</li>
+                      <p class="pricing-plan-title"><%= s.name%></p>
+                      <p class="pricing-plan-title"><%= s.price%> </p>
+                      <ul class="pricing-plan-features"><%= s.sub_details%>
+                        <%# <li>Only 5 Venues at once(per week)</li> %>
                       </ul>
-                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'basic')%> class="btn pricing-plan-purchase-btn">purchase</a>
+                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: s.name)%> class="btn pricing-plan-purchase-btn"><%= s.name %></a>
                       <%# <button  type="submit" class="btn pricing-plan-purchase-btn">Free</button> %>
                    </div>
                  </div>
                 <%# <% end %> 
              </div>
-             <div class="col-md-4">
-                  <div class="card pricing-card pricing-card-highlighted  pricing-plan-pro">
-                    <div class="card-body">
-                      <i class="mdi mdi-trophy pricing-plan-icon"></i>
-                      <p class="pricing-plan-title">Pro</p>
-                      <h3 class="pricing-plan-cost ml-auto">$49</h3>
-                      <ul class="pricing-plan-features">
-                        <li>Only 20 Venues at once(per week)</li>
-                        <%# <li>100 participants max</li> %>
-                        <%# <li>Custom Hold Music</li> %>
-                        <%# <li>10 participants max</li> %>
-                      </ul>
-                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'pro')%> class="btn pricing-plan-purchase-btn">Purchase</a>
-                    </div>
-                  </div>
-            </div>
-            <div class="col-md-4">
-                  <div class="card pricing-card pricing-plan-enterprise">
-                    <div class="card-body">
-                      <i class="mdi mdi-wallet-giftcard pricing-plan-icon"></i>
-                      <p class="pricing-plan-title">Enterprise</p>
-                      <h3 class="pricing-plan-cost ml-auto">$69</h3>
-                      <ul class="pricing-plan-features">
-                        <li>Unlimited Venues</li>
-                        <%# <li>100 participants max</li> %>
-                        <%# <li>Custom Hold Music</li> %>
-                        <%# <li>10 participants max</li> %>
-                      </ul>
-                      <a href = <%= get_subscription_payment_venue_owner_payments_path(subscription: 'enterprise')%>  class="btn pricing-plan-purchase-btn">Purchase</a>
-                    </div>
-                  </div>
-                 </div>
                   <%end%>
 
              
